@@ -2,20 +2,23 @@
 
 use Faker\Factory as Faker;
 
-class SnippetsTableSeeder extends Seeder { 
-  
-  public function run()
-  {
-    $faker = Faker::create();
+class SnippetsTableSeeder extends Seeder
+{
 
-    foreach(range(1, 100) as $index)
+    public function run()
     {
-      $snippet = Snippet::create([
-        'title' => $faker->word,
-        'body' => $faker->paragraph,
-        'description' => $faker->paragraph,
-        'user_id' => $faker->randomElement([1,2,3]) 
-        ]);
+        $faker = Faker::create();
+
+        foreach (range(1, 100) as $index)
+        {
+            $snippet = Snippet::create([
+                    'title' => $faker->word,
+                    'body' => $faker->paragraph,
+                    'description' => $faker->paragraph,
+                    'user_id' => $faker->randomElement([1, 2, 3]),
+                    'dotfile_id' => $faker->randomElement([1, 2, 3])
+            ]);
+            $snippet->save();
+        }
     }
-  }
 }

@@ -17,3 +17,5 @@ Route::resource('user', 'UsersController', ['only' => 'show']);
 
 Route::model('comment', 'Comment');
 Route::resource('comment', 'CommentsController', ['only' => ['store', 'edit', 'update']]);
+
+Route::resource('dotfile', 'DotfilesController');

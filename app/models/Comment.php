@@ -1,20 +1,21 @@
 <?php
 
-class Comment extends Eloquent {
-  protected $fillable = ['body', 'user_id', 'comment_id'];
+class Comment extends Eloquent
+{
+    protected $fillable = ['body', 'user_id', 'comment_id'];
 
-  public static $rules = [
-    'body' => 'required|min:4'
+    public static $rules = [
+            'body' => 'required|min:4'
     ];
 
-  public function snippet()
-  {
-    return $this->belongsTo('Snippet');
-  }
+    public function snippet()
+    {
+        return $this->belongsTo('Snippet');
+    }
 
-  public function user()
-  {
-    return $this->belongsTo('User');
-  }
+    public function user()
+    {
+        return $this->belongsTo('User');
+    }
 
 }

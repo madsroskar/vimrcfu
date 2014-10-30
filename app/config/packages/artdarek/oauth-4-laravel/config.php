@@ -2,26 +2,26 @@
 
 return array(
 
-  /*
-  |--------------------------------------------------------------------------
-  | oAuth Config
-  |--------------------------------------------------------------------------
-  */
+    /*
+    |--------------------------------------------------------------------------
+    | oAuth Config
+    |--------------------------------------------------------------------------
+    */
 
-  /**
-   * Storage
-   */
-  'storage' => 'Session',
+    /**
+     * Storage
+     */
+        'storage' => 'Session',
 
-  /**
-   * Consumers
-   */
-  'consumers' => [
-    'GitHub' => [
-      'client_id'     => getenv('GITHUB_CLIENT'),
-      'client_secret' => getenv('GITHUB_SECRET'),
-      'scope'         => ['user:email'],
-    ],
-  ],
+    /**
+     * Consumers
+     */
+        'consumers' => [
+                'GitHub' => [
+                        'client_id' => getenv('GITHUB_CLIENT'),
+                        'client_secret' => getenv('GITHUB_SECRET'),
+                        'scope' => ['user:email'],
+                ],
+        ],
 
 );

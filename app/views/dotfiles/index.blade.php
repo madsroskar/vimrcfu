@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Browse all Snippets')
+@section('title', 'Browse all dotfiles')
 
 @section('content')
 
@@ -8,12 +8,12 @@
 
     <div class="row">
         <div class="col-sm-8 col-xs-12">
-            <h1>Browse all Snippets</h1>
+            <h1>Browse all dotfiles</h1>
 
             <div class="text-muted">
-                <?php $snippetsTotal = $snippets->getTotal(); ?>
-                {{ $snippetsTotal }} {{ Str::plural('Snippet', $snippetsTotal) }}<br>
-                Page {{ $snippets->getCurrentPage() }} of {{ $snippets->getLastPage() }}
+                <?php $dotfilesTotal = $dotfiles->getTotal(); ?>
+                {{ $dotfilesTotal }} {{ Str::plural('Dotfile', $dotfilesTotal) }}<br>
+                Page {{ $dotfiles->getCurrentPage() }} of {{ $dotfiles->getLastPage() }}
             </div>
         </div>
 
@@ -24,21 +24,21 @@
 
     <div class="row">
         <div class="col-xs-12">
-            @include('partials.paginator')
+            @include('partials.dotfilepaginator')
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-6 col-xs-12">
-            @foreach($snippets as $snippet)
-            @include('partials.snippet', ['img' => true])
+            @foreach($dotfiles as $dotfile)
+            @include('partials.dotfile')
             @endforeach
         </div>
     </div>
 
     <div class="row">
         <div class="col-xs-12">
-            @include('partials.paginator')
+            @include('partials.dotfilepaginator')
         </div>
     </div>
 

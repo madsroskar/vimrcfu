@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCommentsTable extends Migration
+class CreateDotfilesTable extends Migration
 {
 
     /**
@@ -12,14 +12,12 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::table('comments', function ($t)
+        Schema::table('dotfiles', function ($t)
         {
             $t->create();
 
             $t->increments('id');
-            $t->text('body');
-            $t->integer('snippet_id');
-            $t->integer('user_id');
+            $t->string('name');
 
             $t->timestamps();
         });
@@ -32,7 +30,7 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('comments');
+        Schema::drop('dotfiles');
     }
 
 }

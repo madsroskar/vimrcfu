@@ -1,38 +1,39 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSnippetsTable extends Migration {
+class CreateSnippetsTable extends Migration
+{
 
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
-  public function up()
-  {
-    Schema::table('snippets' , function($t) {
-      $t->create();
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('snippets', function ($t)
+        {
+            $t->create();
 
-      $t->increments('id');
-      $t->string('title');
-      $t->text('body');
-      $t->text('description');
-      $t->integer('user_id');
+            $t->increments('id');
+            $t->string('title');
+            $t->text('body');
+            $t->text('description');
+            $t->integer('user_id');
 
-      $t->timestamps();
-    });
-  }
+            $t->timestamps();
+        });
+    }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
-  public function down()
-  {
-    Schema::drop('snippets');
-  }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('snippets');
+    }
 
 }
